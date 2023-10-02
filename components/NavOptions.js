@@ -1,4 +1,4 @@
-import { FlatList, StyleSheet, TouchableOpacity, Text, View, Image } from 'react-native'
+import { FlatList, StyleSheet, TouchableOpacity, Text, View, Image, Alert } from 'react-native'
 import React from 'react'
 import tw from 'tailwind-react-native-classnames';
 import { Icon } from 'react-native-elements';
@@ -14,7 +14,7 @@ const data = [
     },
     {
         id: "456",
-        title: "Order food",
+        title: "ابعد صباعك دا للناس الاغنيه بس",
         image: "https://links.papareact.com/28w",
         screen: "EatsScreen",
 
@@ -38,7 +38,7 @@ const NavOptions = () => {
                             source={{ uri: item.image }}
                             style={{ width: 120, height: 120, resizeMode: "contain" }}
                         />
-                        <Text style={tw`mt-2 text-lg font-semibold`}>{item.title}</Text>
+                        <Text onPress={()=>{Alert.alert("انت لاقي تاكل")}} style={tw`mt-2 text-lg font-semibold`}>{item.title}</Text>
                         <Icon
                             style={tw`p-2 bg-black rounded-full w-10 mt-4`}
                             name="arrowright"
